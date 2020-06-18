@@ -6,6 +6,10 @@ export function convertStringToArray(string){
 
 export function convertArrayTo2DArray(array){
   let result = [array.slice(0,9),array.slice(9,18),array.slice(18,27),array.slice(27,36),array.slice(36,45),array.slice(45,54),array.slice(54,63),array.slice(63,72),array.slice(72,81)];
-  console.log(result)
   return result;
+}
+
+export function convertArrayToSetAndDetermineIfSetHasLengthOfNine(array){
+  let set = new Set(array);
+  return set.size === 9
 }
