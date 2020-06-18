@@ -1,8 +1,8 @@
+import {convertStringToArray} from '../src/sudoku-checker.js'
 
-
-describe("findLargestMultipleThatIsLessThanValue",()=>{
-  test("find largest multiple that is less than value",()=>{
-    const multiple = findLargestMultipleThatIsLessThanValue(37);
-    expect(multiple).toEqual("XXX");
+describe("convertStringToArray",()=>{
+  test("Convert string of 81 digits to array of 81 digits",()=>{
+    const array = convertStringToArray("123");
+    expect(array).toEqual([1,2,3]);
   });
 });
