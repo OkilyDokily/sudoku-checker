@@ -13,3 +13,10 @@ export function convertArrayToSetAndDetermineIfSetHasLengthOfNine(array){
   let set = new Set(array);
   return set.size === 9
 }
+
+export function mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray){
+  let result = twoDArray.map(function(array){
+    return convertArrayToSetAndDetermineIfSetHasLengthOfNine(array);
+  })
+  return result.filter(item => item === true).length === 9
+}

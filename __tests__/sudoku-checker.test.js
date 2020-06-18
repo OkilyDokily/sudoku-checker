@@ -1,4 +1,4 @@
-import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine} from '../src/sudoku-checker.js'
+import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
 
 describe("convertStringToArray",()=>{
   test("Convert string of 81 digits to array of 81 digits",()=>{
@@ -27,6 +27,35 @@ describe("convertArrayToSetAndDetermineIfSetHasLengthOfNine",()=>{
   test("Convert array to set and determine if set has length of nine",()=>{
     const array = [1,2,3,3,5,6,7,8,9];
     const result = convertArrayToSetAndDetermineIfSetHasLengthOfNine(array);
+    expect(result).toEqual(false);
+  });
+});
+
+describe("mapOver2DArrayToSeeIfEachHasASetSizeOfNine",()=>{
+  test("map Over 2D array To see if each has a set size of nine",()=>{
+    let twoDArray = [];
+    for(let j = 0; j <= 8; j++){
+      let array = [];
+      for(let i = 0; i <= 8; i++){   
+        array.push(i+1);
+      }
+      twoDArray.push(array);
+    }
+    const result = mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(true);
+  });
+
+  test("map Over 2D array To see if each has a set size of nine",()=>{
+    let twoDArray = [];
+    for(let j = 0; j <= 8; j++){
+      let array = [];
+      for(let i = 0; i <= 8; i++){   
+        array.push(i+1);
+      }
+      twoDArray.push(array);
+    }
+    twoDArray[7][7] = 5;
+    const result = mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
     expect(result).toEqual(false);
   });
 });
