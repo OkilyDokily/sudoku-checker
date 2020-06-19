@@ -138,6 +138,8 @@ describe("validateSudoku",()=>{
 
   test("validate Sudoku",()=>{
     const result = validateSudoku("435269781682571493197834562826195347374682915951743668519326874248957136763418259");
+    //https://dingo.sbs.arizona.edu/~sandiway/sudoku/examples.html
     expect(result).toEqual(false);
+    
   });
 });
