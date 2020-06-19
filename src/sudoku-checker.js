@@ -49,3 +49,7 @@ export function mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray){
   }
   return mapOver2DArrayToSeeIfEachHasASetSizeOfNine(newTwoDArray);
 }
+
+export function testThatInputsAreValid(inputString){
+   return !(/[^1-9]/.test(inputString)) && inputString.length === 81;
+}

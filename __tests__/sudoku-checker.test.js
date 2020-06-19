@@ -1,4 +1,4 @@
-import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine, mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
+import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine, mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine, testThatInputsAreValid} from '../src/sudoku-checker.js'
 
 describe("convertStringToArray",()=>{
   test("Convert string of 81 digits to array of 81 digits",()=>{
@@ -107,6 +107,25 @@ describe("mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine",()=>{
     }
     twoDArray[0][4] = 1
     let result = mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(false);
+  });
+});
+
+describe("testThatInputsAreValid",()=>{
+  test("test that inputs are valid",()=>{
+    const result = testThatInputsAreValid("123456789123456789123456789123456789123456789123456789123456789123456789123456789");
+    expect(result).toEqual(true);
+  });
+  test("test that inputs are valid",()=>{
+    const result = testThatInputsAreValid("1234567891243456789123456789123456789123456789123456789123456789123456789123456789");
+    expect(result).toEqual(false);
+  });
+  test("test that inputs are valid",()=>{
+    const result = testThatInputsAreValid("123456789r243456789123456789123456789123456789123456789123456789123456789123456789");
+    expect(result).toEqual(false);
+  });
+  test("test that inputs are valid",()=>{
+    const result = testThatInputsAreValid("1234567891243456789123456 89123456789123456789123456789123456789123456789123456789");
     expect(result).toEqual(false);
   });
 });
