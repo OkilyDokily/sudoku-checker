@@ -1,4 +1,4 @@
-import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
+import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine, mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
 
 describe("convertStringToArray",()=>{
   test("Convert string of 81 digits to array of 81 digits",()=>{
@@ -72,6 +72,41 @@ describe("mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine",()=>{
   test("map over each vertical array in a 2d array to see if each has a set size of nine",()=>{
     let twoDArray =[new Array(9).fill(1),new Array(9).fill(2),new Array(9).fill(3),new Array(9).fill(3),new Array(9).fill(5),new Array(9).fill(6),new Array(9).fill(7),new Array(9).fill(8),new Array(9).fill(9)]
     const result = mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(false);
+  });
+});
+
+
+describe("mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine",()=>{
+  test("map Over Each Table In Board To See if Each Has A Set Size of Nine",()=>{
+    let twoDArray = [[],[],[],[],[],[],[],[],[]];
+    for (let l = 0; l <=2; l++){
+      for(let k = 0; k <= 2; k++){
+        for (let j = 0; j <= 2; j++){
+          for(let i = 1 + (k * 3); i <= 3 * (k + 1); i++){
+            twoDArray[k + (3 * l)].push(i);
+          }
+        }
+      }
+    }
+    
+    let result = mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(true);
+  });
+
+  test("map Over Each Table In Board To See if Each Has A Set Size of Nine",()=>{
+    let twoDArray = [[],[],[],[],[],[],[],[],[]];
+    for (let l = 0; l <=2; l++){
+      for(let k = 0; k <= 2; k++){
+        for (let j = 0; j <= 2; j++){
+          for(let i = 1 + (k * 3); i <= 3 * (k + 1); i++){
+            twoDArray[k + (3 * l)].push(i);
+          }
+        }
+      }
+    }
+    twoDArray[0][4] = 1
+    let result = mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray);
     expect(result).toEqual(false);
   });
 });

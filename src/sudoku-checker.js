@@ -22,7 +22,6 @@ export function mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray){
 }
 
 export function mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray){
- 
   let newTwoDArray = [];
   for (let j = 0; j <=8; j++){
     let verticalArray = [];
@@ -31,6 +30,22 @@ export function mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(t
       verticalArray.push(twoDArray[i][j])
     }
     newTwoDArray.push(verticalArray);
+  }
+  return mapOver2DArrayToSeeIfEachHasASetSizeOfNine(newTwoDArray);
+}
+
+export function mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray){
+  let newTwoDArray = [];
+  for (let l = 0; l <=2; l++){
+    for (let k = 0; k <=2; k++){
+      let array = [];
+      for (let j = 0 + (3 * l); j <= 2 + (3 * l); j++){
+        for (let i = 0 + (3 * k); i <= 2 + (3 * k); i++){
+          array.push(twoDArray[j][i]);
+        }
+      }
+      newTwoDArray.push(array)
+    }
   }
   return mapOver2DArrayToSeeIfEachHasASetSizeOfNine(newTwoDArray);
 }
