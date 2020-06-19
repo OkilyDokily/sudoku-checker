@@ -1,4 +1,4 @@
-import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
+import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine} from '../src/sudoku-checker.js'
 
 describe("convertStringToArray",()=>{
   test("Convert string of 81 digits to array of 81 digits",()=>{
@@ -24,6 +24,7 @@ describe("convertArrayToSetAndDetermineIfSetHasLengthOfNine",()=>{
     const result = convertArrayToSetAndDetermineIfSetHasLengthOfNine(array);
     expect(result).toEqual(true);
   });
+
   test("Convert array to set and determine if set has length of nine",()=>{
     const array = [1,2,3,3,5,6,7,8,9];
     const result = convertArrayToSetAndDetermineIfSetHasLengthOfNine(array);
@@ -56,6 +57,21 @@ describe("mapOver2DArrayToSeeIfEachHasASetSizeOfNine",()=>{
     }
     twoDArray[7][7] = 5;
     const result = mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(false);
+  });
+});
+
+
+describe("mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine",()=>{
+  test("map over each vertical array in a 2d array to see if each has a set size of nine",()=>{
+    let twoDArray =[new Array(9).fill(1),new Array(9).fill(2),new Array(9).fill(3),new Array(9).fill(4),new Array(9).fill(5),new Array(9).fill(6),new Array(9).fill(7),new Array(9).fill(8),new Array(9).fill(9)]
+    const result = mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
+    expect(result).toEqual(true);
+  });
+
+  test("map over each vertical array in a 2d array to see if each has a set size of nine",()=>{
+    let twoDArray =[new Array(9).fill(1),new Array(9).fill(2),new Array(9).fill(3),new Array(9).fill(3),new Array(9).fill(5),new Array(9).fill(6),new Array(9).fill(7),new Array(9).fill(8),new Array(9).fill(9)]
+    const result = mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray);
     expect(result).toEqual(false);
   });
 });

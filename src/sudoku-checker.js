@@ -20,3 +20,17 @@ export function mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray){
   })
   return result.filter(item => item === true).length === 9
 }
+
+export function mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray){
+ 
+  let newTwoDArray = [];
+  for (let j = 0; j <=8; j++){
+    let verticalArray = [];
+    for(let i = 0; i <= 8; i++){
+     
+      verticalArray.push(twoDArray[i][j])
+    }
+    newTwoDArray.push(verticalArray);
+  }
+  return mapOver2DArrayToSeeIfEachHasASetSizeOfNine(newTwoDArray);
+}
