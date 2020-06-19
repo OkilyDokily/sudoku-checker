@@ -53,3 +53,8 @@ export function mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray){
 export function testThatInputsAreValid(inputString){
    return !(/[^1-9]/.test(inputString)) && inputString.length === 81;
 }
+
+export function validateSudoku(input){
+  let twoDArray = convertArrayTo2DArray(convertStringToArray(input));
+  return testThatInputsAreValid(input) && mapOver2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray) && mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine(twoDArray) && mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine(twoDArray); 
+}

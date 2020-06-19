@@ -1,4 +1,4 @@
-import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine, mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine, testThatInputsAreValid} from '../src/sudoku-checker.js'
+import {convertStringToArray,convertArrayTo2DArray, convertArrayToSetAndDetermineIfSetHasLengthOfNine,mapOver2DArrayToSeeIfEachHasASetSizeOfNine,mapOverEachVerticalArrayInA2DArrayToSeeIfEachHasASetSizeOfNine, mapOverEachTableInBoardToSeeIfEachHasASetSizeOfNine, testThatInputsAreValid,validateSudoku} from '../src/sudoku-checker.js'
 
 describe("convertStringToArray",()=>{
   test("Convert string of 81 digits to array of 81 digits",()=>{
@@ -126,6 +126,18 @@ describe("testThatInputsAreValid",()=>{
   });
   test("test that inputs are valid",()=>{
     const result = testThatInputsAreValid("1234567891243456789123456 89123456789123456789123456789123456789123456789123456789");
+    expect(result).toEqual(false);
+  });
+});
+
+describe("validateSudoku",()=>{
+  test("validate Sudoku",()=>{
+    const result = validateSudoku("435269781682571493197834562826195347374682915951743628519326874248957136763418259");
+    expect(result).toEqual(true);
+  });
+
+  test("validate Sudoku",()=>{
+    const result = validateSudoku("435269781682571493197834562826195347374682915951743668519326874248957136763418259");
     expect(result).toEqual(false);
   });
 });
