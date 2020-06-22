@@ -4,18 +4,66 @@
   <title>Sudoku Checker</title>
 </head>
 <body>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <hr>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <hr>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
-  <button>Check Validity</button>
-  <div id="results"></div>
+  <div class="jumbotron">Sudoku Checker</div>
+  <div id="sudoku">
+    <div id="sudoku-center">
+      <div id="tax1" class="tax">
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+      </div>
+      <div id="tax2" class="tax">
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+      </div>
+      <div id="tax3" class="tax">
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <div class="rowx">
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+          <div><input type="number" min="1" max="9"><input type="number" min="1" max="9"><input type="number" min="1" max="9"></div>
+        </div>
+        <button>Check Validity</button>
+        <div id="results"></div>
+      </div>
+    </div>
+  
+    
+  </div>
+ 
 </body>
 </html>

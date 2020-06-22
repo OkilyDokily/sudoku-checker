@@ -1,8 +1,50 @@
 input{
   width:40px;
+  margin:0;
+  padding: 0;
+}
+.jumbotron{
+  margin:auto;
+  width: 70%;
+  margin-bottom: 20px;
 }
 
-hr {
-  margin-top: 3px;
-  margin-bottom: 3px;
+#sudoku{
+  margin: auto;
+  width: 500px;
+  background-color: aqua;
+  padding: 50px;
+  
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+
+#sudoku-center{
+  width: auto;
+  /* margin: auto; */
+}
+
+.rowx div {
+  display:inline-block;
+}
+
+.rowx div:nth-of-type(3){
+  margin-right: 0;
+}
+
+.rowx{
+  display: flex;
+  justify-content: space-between;
+  width: 376px;
+}
+
+button{margin-top: 5px;}
+
+
+.tax{
+  width: 376px;
+  margin-right: 0;
+  margin-bottom: 6px;
+}
+
